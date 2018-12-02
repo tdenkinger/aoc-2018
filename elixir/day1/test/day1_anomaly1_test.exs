@@ -1,9 +1,21 @@
 defmodule Day1Anomaly1Test do
   use ExUnit.Case
 
-  test "counts up and down" do
-    final_frequency = Day1Anomaly1.adjust(["+1", "-1"])
+  test "adjusts frequency" do
+    starting_freq = 0
+    adjustments = ["+11", "-1", "-2", "+1"]
 
-    assert final_frequency == 0
+    final_frequency = Day1Anomaly1.get_final_frequency(adjustments, starting_frequency)
+
+    assert final_frequency == 9
+  end
+
+  test "adjusts frequency starting from non-zero" do
+    starting_freq = 1
+    adjustments = ["+11", "-1", "-2", "+1"]
+
+    final_frequency = Day1Anomaly1.get_final_frequency(adjustments, starting_frequency)
+
+    assert final_frequency == 10
   end
 end
