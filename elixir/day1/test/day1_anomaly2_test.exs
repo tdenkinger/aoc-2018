@@ -1,21 +1,12 @@
 defmodule Day1Anomaly2Test do
   use ExUnit.Case
 
-  test "x" do
+  test "recogizes that a frequency has been repeated" do
     start = 0
-    adjustments = []
+    adjustments = ["+3", "+3", "+4", "-2", "-4"]
 
-    state = %{start: start, seen: MapSet.new([start]), all_adjustments: adjustments}
+    repeated_freq = Day1Anomaly2.get_first_repeated_frequency(adjustments, start)
 
-    IO.inspect(Day1Anomaly2.get_first_repeated_frequency(adjustments, state))
+    assert repeated_freq == 10
   end
-
-  # test "finds the first repeat of a frequency" do
-  #   adjustments = ["+1", "-1"]
-  #   start = 0
-
-  #   repeated_frequency = Day1Anomaly2.get_repeated_frequency(adjustments, start)
-
-  #   assert repeated_frequency == 0
-  # end
 end
