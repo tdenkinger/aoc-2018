@@ -1,4 +1,10 @@
 defmodule Day1Anomaly2 do
+  def run(file) do
+    File.stream!(file)
+    |> Stream.map(&String.trim_trailing/1)
+    |> get_first_repeated_frequency(0)
+  end
+
   def get_first_repeated_frequency(adjustments, start) do
     Stream.cycle(adjustments)
     |> Enum.reduce_while([start], fn adjustment, seen ->
