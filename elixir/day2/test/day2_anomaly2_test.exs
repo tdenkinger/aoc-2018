@@ -10,8 +10,8 @@ defmodule Day2Anomaly2Test do
                    axcye
                    wvxyz)
 
-    two_boxes = Day2Anomaly2.find_boxes(test_data)
+    shared_characters = Day2Anomaly2.get_common_characters(test_data)
 
-    assert two_boxes = ["fghij", "fguij"]
+    assert shared_characters == "fgij"
   end
 end
